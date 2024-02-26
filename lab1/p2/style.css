@@ -1,0 +1,23 @@
+.Container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 250px;
+}
+
+.input-container {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    width: 400px;
+    margin-left: 50px;
+}
+
+span {
+    font-size: x-large;
+}
