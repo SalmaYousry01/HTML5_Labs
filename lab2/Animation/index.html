@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animation</title>
+</head>
+
+<body>
+  <canvas id="canvas" width="500" height="500" style="border: 1px solid #000000">
+  </canvas>
+
+  <script>
+    let c = document.getElementById("canvas");
+    let ctx = c.getContext("2d");
+    let x = 0,
+      y = 0;
+    ctx.moveTo(0, 0);
+
+    function increaseLine() {
+      x += 50;
+      y += 50;
+      ctx.lineTo(x, y);
+      ctx.stroke();
+
+      if (x > 500) {
+        alert("Animation Ended");
+        clearInterval(animation);
+      }
+    }
+    let animation = setInterval(increaseLine, 1000);
+  </script>
+</body>
+
+</html>

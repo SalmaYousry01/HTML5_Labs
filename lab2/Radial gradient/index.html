@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Radial gradient</title>
+</head>
+
+<body>
+    <canvas id="demoCanvas" width="500" height="600"></canvas>
+    <script>
+        var canvas = document.getElementById("demoCanvas");
+        if (canvas.getContext) {
+            var ctx = canvas.getContext("2d");
+
+
+            var outerGradient = ctx.createRadialGradient(
+                150,
+                150,
+                50,
+                150,
+                150,
+                180
+            );
+            outerGradient.addColorStop(0, "darkblue");
+            outerGradient.addColorStop(1, "white");
+
+            ctx.beginPath();
+            ctx.arc(150, 150, 150, 0, 2 * Math.PI);
+            ctx.fillStyle = outerGradient;
+            ctx.fill();
+
+
+            var innerGradient = ctx.createLinearGradient(70, 150, 230, 150);
+            innerGradient.addColorStop(0, "darkblue");
+            innerGradient.addColorStop(1, "lightblue");
+
+
+            ctx.beginPath();
+            ctx.arc(150, 150, 120, 0, 2 * Math.PI);
+            ctx.fillStyle = innerGradient;
+            ctx.fill();
+
+
+            ctx.font = "250px Arial";
+            ctx.fillStyle = "white";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText("N", 150, 170);
+        } 
+    </script>
+</body>
+
+</html>
