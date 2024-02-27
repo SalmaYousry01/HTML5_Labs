@@ -1,0 +1,49 @@
+.card {
+    width: 280px;
+    height: 450px;
+    border: solid 5px red;
+    border-radius: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.triangle_up {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 40px 80.6px 40px;
+    border-color: transparent transparent black transparent;
+}
+
+.heart {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -120%) rotate(135deg);
+    background: black;
+    width: 90px;
+    height: 90px;
+    z-index: 1;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    background: black;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+}
+
+.heart:after {
+    top: -50px;
+    left: 0;
+}
+
+.heart:before {
+    left: 50px;
+    top: 0;
+}
